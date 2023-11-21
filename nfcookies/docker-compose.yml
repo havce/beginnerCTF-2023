@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  nfcookies:
+    build: .
+    container_name: "nfcookies"
+    ports:
+      - "0.0.0.0:7777:5000"
+    restart: unless-stopped
+    volumes:
+      - ./src/instance:/app/instance
+    environment:
+      - FLAG=${FLAG_NFCOOKIES}
+

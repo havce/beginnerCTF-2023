@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if data %}
+<div class="columns">
+    <div class="column">
+      <h1 class="title">{{ data.username }}</h21>
+      <h5><i>{{ data.quote }}</i></h5>
+    </div>
+    <div class="column">
+        <!--<img src="/static/images/{{ data.id }}.png" /> -->
+        <img src="https://raw.githubusercontent.com/giammisimo/nfcookies-assets/main/images/{{ data.id }}.png" />
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+```

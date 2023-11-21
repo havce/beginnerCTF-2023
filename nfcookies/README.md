@@ -6,7 +6,7 @@
 
 ## Solution
 The website uses the cookie `username` as a session cookie. 
-This cookie is not signed and simply contains the username of the current user.
+This cookie is not signed and simply contains the base64 encoding of the current user's username.
 It is then possible to change the content of the cookie (for example through the browser) to get access to any user account.
 The user `admin`, holder of the Golden Cookie, has the flag as its personal quote.
 

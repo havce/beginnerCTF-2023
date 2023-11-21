@@ -11,4 +11,4 @@ It is then possible to change the content of the cookie (for example through the
 The user `admin`, holder of the Golden Cookie, has the flag as its personal quote.
 
 ## Flag
-havceCTF{cH4rl13_4nd_7he_c00k1e2_f4c70Ry}
+havceCTF{cH4rl13_4nd_7he_c00k1e_f4c70Ry}

@@ -5,6 +5,7 @@ import string
 import secrets
 import os
 import requests
+import base64
 
 db = SQLAlchemy()
 app = Flask(__name__)
@@ -63,6 +64,7 @@ def signup():
             db.session.add(user)
             db.session.commit()
             resp = make_response(redirect("/profile"))
+            username = base64.b64encode(username.encode()).decode()
             resp.set_cookie('username',username)
             return resp
         except Exception as e:
@@ -74,8 +76,10 @@ def signup():
 def details():
     if "username" not in request.cookies:
         return redirect("/signup")
-    details = User.query.filter_by(username=request.cookies.get("username")).all()
-    print(details[0],flush=True)
+    usernameraw = request.cookies.get("username").encode()
+    username_decoded = base64.b64decode(usernameraw).decode()
+    details = User.query.filter_by(username=username_decoded).all()
+    print('Profile:',username_decoded)
     return render_template("profile.html", data=details[0])
 
 
@@ -88,6 +92,7 @@ def login():
         user = User.query.filter_by(username=username, password=password).first()
         if user:
             resp = make_response(redirect("/profile"))
+            username = base64.b64encode(username.encode()).decode()
             resp.set_cookie('username',username)
             return resp
         else:
@@ -105,11 +110,5 @@ def logout():
 @app.route("/users", methods=["GET"])
 def users():
     users = User.query.all()
-    '''if request.args['page']:
-        page = int(request.args.get('page'))-1
-    else:
-        page = 0
-    users = users.limit(20)
-    users = users.offset(page*20)'''
     print([u.username for u in users],flush=True)
     return render_template("users.html", users=users)

@@ -1,4 +1,4 @@
-# nfcookie
+# nfcookies
 ## Description
 > Get your very own Non-Fungible Cookie! Will you be able to get the golden cookie?
 

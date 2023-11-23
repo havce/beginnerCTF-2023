@@ -36,6 +36,8 @@ struct reportError initApp()
 
 	fgets( ADMIN.mailAddress, BUFFERLENGHT, ptrFlag );
 	fclose( ptrFlag );
+
+	return ADMIN;
 }
 
 

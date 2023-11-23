@@ -10,6 +10,8 @@ Si tratta di un errore nella gestione dei puntatori nella funzione camel case, i
 
 ## Bandiera
 
-'''
+
+
+```
 havceCTF{L0_5P4Z10_CH3_54LT4_IL_T4PP0}
-'''
+```

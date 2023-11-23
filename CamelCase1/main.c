@@ -4,7 +4,7 @@
 
 #define BUFFERLENGHT 128
 
-struct user {
+struct reportError {
 	char messange[BUFFERLENGHT];
 	char mailAddress[BUFFERLENGHT];
 };
@@ -24,29 +24,29 @@ void camelCase( char * message )
 	puts("");
 }
 
-
-int main( int argc, char ** argv )
+struct reportError initApp()
 {
-	struct user ADMIN = {{0},{0}};
+	struct reportError ADMIN = {{0},{0}};
 
 	FILE * ptrFlag = fopen("flag.txt", "r");
 	if ( ptrFlag == NULL ) {
 		printf("NON E' STATO POSSIBILE CARICARE LA FLAG !!\n");
-		return 0;
+		exit(1);
 	}
+
 	fgets( ADMIN.mailAddress, BUFFERLENGHT, ptrFlag );
 	fclose( ptrFlag );
+}
 
 
-	printf(" !! -- OPS, SEMBREREBBE CHE L'APPLICAZIONE ABBIA DEI PROBRELI"
-	"  -- !! \n");
-	
-	printf("  # PROVA A CONTATTARE L'AMMINISTRATORE\n\t-> Ricorda gli spazz"
-	"i spariscono\n\t-> E le prime lettere si sostituiscono\nmessaggio: ");
+int main( int argc, char ** argv )
+{
+	struct reportError ADMIN = initApp();
 
+	printf(" !! -- OPS, SEMBREREBBE CHE L'APPLICAZIONE ABBIA DEI PROBRELI  -- !! \n");
+	printf("  # PROVA A CONTATTARE L'AMMINISTRATORE\n\t-> Ricorda gli spazzi spariscono\n\t-> E le prime lettere si sostituiscono\nmessaggio: ");
 
 	fgets( ADMIN.messange, BUFFERLENGHT, stdin );
-
 
 	printf("\n\n===> MESSAGGIO INVIATO:\n-> ");
 	camelCase( ADMIN.messange );

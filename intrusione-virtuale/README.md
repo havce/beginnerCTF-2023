@@ -43,7 +43,12 @@ if ($inp != "192014812")
 ```
 
 Ovviamente visto che la stringa contiene il numero "1", la password "192014812" non è valida.
-Osservando il codice però, possiamo osservare che prima di `strcmp` viene eseguita la funzione [`eval`](https://www.php.net/manual/en/function.eval.php)
+Osservando il codice però, possiamo osservare che prima di `strcmp` viene eseguita la funzione [`eval`](https://www.php.net/manual/en/function.eval.php).
+```php
+eval("\$input=$inp;");
+```
+Per il funzionamento interno della funzione `eval` possiamo usarla a nostro favore, passando come parametro "192014812" codificato, per esempio in esadecimale.
+Ricordiamoci che non possiamo passare direttamente il numero codificato, ma possiamo per esempio passare `192014822 - 10`.
 
 
 

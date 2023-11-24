@@ -15,6 +15,14 @@ HINT: Utilizzare la rappresentazione esadecimale potrebbe esserti d'aiuto.
 
 
 ## Soluzione
+Come affermato nella descrizione, il primo obiettivo era superare le REGEX.
+
+```php
+if (!preg_match("/^[a-zA-Z0-9_\-'(),]+$/", $inp, $matches))
+```
+In questa prima REGEX vengono filtrati tutti i caratteri non compresi nella funzione `preg_match`, per esempio lo spazio.
+
+
 
 
 ## Flag

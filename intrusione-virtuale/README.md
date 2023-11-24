@@ -55,7 +55,7 @@ Ricordiamoci che non possiamo passare direttamente il numero codificato, ma poss
 
 import requests
 
-url = "https://benjaminn.altervista.org/web-1/index.php"
+url = "http://www.beginner.havce.it:8080"
 
 # 192145884 -> numero più grande --> hex(192145884) = 0xb73e9dc
 # 192014812 -> numero

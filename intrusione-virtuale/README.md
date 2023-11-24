@@ -57,9 +57,9 @@ import requests
 
 url = "http://www.beginner.havce.it:8080"
 
-# 192145884 -> numero più grande --> hex(192145884) = 0xb73e9dc
-# 192014812 -> numero
-# 131072    -> differenza --> hex(131072) = 0x20000
+# 192145884 --> numero più grande --> hex(192145884) = 0xb73e9dc
+# 192014812 --> numero
+# 131072    --> differenza --> hex(131072) = 0x20000
 
 payload = {
     "password": "0xb73e9dc-0x20000"

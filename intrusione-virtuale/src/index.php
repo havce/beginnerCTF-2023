@@ -31,7 +31,7 @@
 
                     <form method="post" action="">
                         <div class="inputBox">
-                            <input required type="text" name="password"> <i>Password</i>
+                            <input type="text" name="password"> <i>Password</i>
                         </div>
 
                         <?php

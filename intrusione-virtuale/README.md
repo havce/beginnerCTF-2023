@@ -15,3 +15,7 @@ HINT: Utilizzare la rappresentazione esadecimale potrebbe esserti d'aiuto.
 
 
 ## Soluzione
+
+
+## Flag
+havceCTF{m4l3det7o_3va1}

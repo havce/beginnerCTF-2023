@@ -35,7 +35,7 @@
                         </div>
 
                         <?php
-                        $FLAG = "flag{m4l3det7o_3va1}";
+                        $FLAG = "havceCTF{m4l3det7o_3va1}";
                         if (isset($_POST['password']) && is_string($_POST['password'])) {
                             $inp = $_POST['password'];
                             if ($inp == "") {

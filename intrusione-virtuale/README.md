@@ -18,7 +18,7 @@ HINT: Utilizzare la rappresentazione esadecimale potrebbe esserti d'aiuto.
 Come affermato nella descrizione, il primo obiettivo era superare le REGEX.
 
 
-La prima REGEX filtra tutti i caratteri non compresi nella funzione `preg_match`, per esempio lo spazio ( ).
+La prima REGEX controlla se la password contiene caratteri non compresi nella funzione `preg_match`, per esempio lo spazio ( ).
 ```php
 if (!preg_match("/^[a-zA-Z0-9_\-'(),]+$/", $inp, $matches))
 ```
@@ -30,6 +30,20 @@ La seconda REGEX:
 ```php
 if (!(preg_match("/[0-9]/", $inp, $matches) && preg_match("/[a-zA-Z]/", $inp, $matches) && preg_match("/[_-]/", $inp, $matches)))
 ```
+
+La terza REGEX controlla se la password contiene il numero "1".
+```php
+if (preg_match("/[1]/", $inp, $matches))
+```
+
+
+Arrivati a questo punto dobbiamo porci un altro obiettivo, quello di superare l'ultimo controllo.
+```php
+if ($inp != "192014812")
+```
+
+Ovviamente visto che la stringa contiene il numero "1", la password "192014812" non è valida.
+Osservando il codice però, possiamo osservare che prima di `strcmp` viene eseguita la funzione [`eval`](https://www.php.net/manual/en/function.eval.php)
 
 
 

@@ -47,7 +47,7 @@ Osservando il codice però, possiamo osservare che prima di `strcmp` viene esegu
 ```php
 eval("\$input=$inp;");
 ```
-Per il funzionamento interno della funzione `eval` possiamo usarla a nostro favore, passando come parametro "192014812" codificato, per esempio in esadecimale.
+Grazie al funzionamento interno della funzione `eval`, possiamo usarla a nostro favore, passando come parametro "192014812" codificato, per esempio in esadecimale.
 Ricordiamoci che non possiamo passare direttamente il numero codificato, ma possiamo per esempio passare `192014822 - 10`.
 
 ```py

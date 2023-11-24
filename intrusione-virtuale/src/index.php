@@ -26,7 +26,7 @@
                 <div class="form">
                 
                 	<div class="inputBox">
-                    	<input type="text" name="username" value="admin"> <i>Username</i>
+                    	<input type="text" name="username" value="Intruso Supremo"> <i>Username</i>
                     </div>
 
                     <form method="post" action="">

@@ -1,0 +1,1 @@
+org.springframework.boot.env.EnvironmentPostProcessor=it.unipr.soi23.game_web_server.Soi23GameWebServerEnvironmentPostProcessor

@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+
+  redis:
+    image: redis:7.2
+    restart: always
+    # ports:
+    #   - "6379:6379"
+    volumes:
+      - redis-data:/data
+    deploy:
+      replicas: 1
+
+  stomp-relay:
+    build:
+      dockerfile_inline: |
+        FROM rabbitmq:3.12
+        RUN rabbitmq-plugins enable --offline rabbitmq_stomp
+    image: stomp-relay
+    # ports:
+    # - "61613:61613"
+    restart: always
+
+  web-server:
+    build: ./soi23-game-web-server
+    image: web-server
+    restart: always
+    environment:
+      - SPRING_DATA_REDIS_HOST=redis
+      - flag=${FLAG_IMPOSSIBLE_GAME}
+    command: java -jar app.jar
+    deploy:
+      replicas: 2
+
+  ui:
+    build: ./soi23-game-ui
+    image: ui
+    restart: always
+    ports:
+      - "80:80"
+    # - "4200:80"
+
+volumes:
+  redis-data:

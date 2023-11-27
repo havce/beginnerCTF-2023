@@ -1,0 +1,28 @@
+FROM ubuntu:22.04 as builder
+
+SHELL ["/bin/bash", "-c"]
+RUN apt update
+RUN apt upgrade -y
+RUN apt install curl -y
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+
+COPY . /app/soi23-game-ui
+WORKDIR /app/soi23-game-ui
+
+SHELL ["/bin/bash", "-i", "-c"]
+RUN source /root/.bashrc
+RUN nvm install lts/*
+RUN npm install -g nx
+RUN npm install
+RUN nx build
+
+
+
+FROM httpd:2.4
+SHELL ["/bin/sh", "-c"]
+
+COPY ./conf.d /usr/local/apache2/conf.d
+COPY --from=builder /app/soi23-game-ui/dist/soi23-game-ui /usr/local/apache2/htdocs
+
+# Extend the original configuration
+RUN echo "Include conf.d/*.conf" >> /usr/local/apache2/conf/httpd.conf

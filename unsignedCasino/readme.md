@@ -1,10 +1,10 @@
 # unsignedCasino 
 
 ## Descrizione
-Ho creato questo casino per far perdere più soldi possibili alle persone ma una persona mi ha fregato tutti i soldi riesci a capire perchè?
+Ho creato questo casino per far perdere più soldi possibili alle persone, ma qualcuno mi ha fregato tutti i soldi riesci a capire perchè?
 
 ## Soluzione
-Per risolvere la challenge basta inserire una bet maggiore ai soldi disponibili nel tuo portafoglio e perdendo il tuo conto diventerà negativo, ma il passaggio da long ad unsigned long trasforemerà il numero negativo in un numero altissimo.
+Per risolvere la challenge basta inserire una bet maggiore rispetto ai soldi disponibili nel tuo portafoglio e perdendo il tuo conto diventerà negativo, ma il passaggio da long ad unsigned long trasforemerà il numero negativo in un numero altissimo.
 
 
 # Flag

@@ -1,4 +1,4 @@
-FROM gcc as builder
+FROM gcc:13.2.0-bookworm as builder
 COPY . /build
 WORKDIR /build
 RUN ./build.sh

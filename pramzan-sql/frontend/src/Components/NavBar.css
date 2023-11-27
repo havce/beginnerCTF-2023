@@ -1,0 +1,41 @@
+.navbarContainer {
+    flex: 1;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+/*animate as a writing machine*/
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.navbarContainer .logo {
+    flex: 1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    /*animate as a writing machine*/
+    border-right: 2px solid orange;
+    animation: typing 2s steps(40) infinite alternate;
+}
+
+.navbarLinks {
+    flex: 1;
+    display: flex;
+    margin: 30px 30px 30px 30px;
+    justify-content: space-between;
+    align-items: center;
+}

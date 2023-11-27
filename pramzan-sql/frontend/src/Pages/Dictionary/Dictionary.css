@@ -1,0 +1,14 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    overflow: hidden;
+    min-width: 250px;
+}
+
+thead {
+    background-color: #257cff;
+    color: #ffffff;
+    /* make thead sticky */
+    position: sticky;
+    top: 0;
+}

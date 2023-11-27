@@ -1,0 +1,8 @@
+# Ignora i file di sistema Mac
+.DS_Store
+
+# Ignora la cartella node_modules
+node_modules
+
+#Ignora Jetbrain config
+.idea

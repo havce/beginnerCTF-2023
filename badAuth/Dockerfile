@@ -4,4 +4,4 @@ FROM php:8-apache
 COPY src/website/index.php /var/www/html/
 
 # Imposta la porta di esposizione del server web
-EXPOSE 3434
+EXPOSE 80

@@ -19,6 +19,7 @@ Analizziamo tutti i pacchetti che arrivano sulla scheda di rete! (Cliccando su a
 A questo punto possiamo eseguire di nuovo l'eseguibile... e aspettare.
 
 ![change](https://i.postimg.cc/MGzXVHjX/change.png)
+
 Ok la abbiamo! Richiesta POST con paramentro authCode=false.
 Passando autCode=true ci farà entrare?
 

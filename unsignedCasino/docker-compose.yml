@@ -1,0 +1,10 @@
+version: "3"
+services:
+  unsignedcasino:
+    build: .
+    environment:
+      - JAIL_ENV_FLAG=${FLAG_UNSIGNED_CASINO}
+    privileged: true
+    ports:
+      - "1337:5000"
+

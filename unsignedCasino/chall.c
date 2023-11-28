@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <sys/random.h>
 
-void win() { system("cat flag.txt"); }
+void win() { puts(getenv("FLAG")); }
 
 void game_banner() {
   puts("------------------------");
@@ -26,6 +26,14 @@ void banner() {
   puts("insert any other number to quit.");
 }
 
+// This is needed for the rendering of the challenge. You can skip this.
+// It is irrelevant to solve the challenge.
+void buffering() {
+  setvbuf(stdin, NULL, _IONBF, 0);
+  setvbuf(stdout, NULL, _IONBF, 0);
+  setvbuf(stderr, NULL, _IONBF, 0);
+}
+
 unsigned long blackjack(unsigned long money) {
   long balance = 0, bet = 0;
   int sumUser = 0, choice = 0, sumDeck = 0;
@@ -33,7 +41,7 @@ unsigned long blackjack(unsigned long money) {
   game_banner();
 
   if (money > 1000) {
-    system("cat flag.txt");
+    win();
   }
 
   while (1) {
@@ -78,7 +86,8 @@ unsigned long blackjack(unsigned long money) {
       }
       continue;
     case 2:
-      sumDeck = 21; // this is not how blackjack works but fck it, find the bug :)
+      sumDeck =
+          21; // this is not how blackjack works but fck it, find the bug :)
       if (sumUser < sumDeck) {
         puts("you lost :|");
         return money - bet;
@@ -94,6 +103,8 @@ unsigned long blackjack(unsigned long money) {
 }
 
 int main() {
+  buffering();
+
   int choice;
   unsigned long money = 10;
   while (1) {

@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+@keyframes ballAnimation {
+    100% {
+        cx: var(--ball-end-x);
+        cy: var(--ball-end-y);
+    }
+}

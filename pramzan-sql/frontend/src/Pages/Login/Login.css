@@ -1,0 +1,47 @@
+.formContainer {
+    margin: 100px 200px 200px 200px;
+    width: 60%;
+    height: 100%;
+
+    padding: 30px;
+    display: flex;
+    text-align: justify;
+
+    background: white;
+    border-radius: 25px;
+}
+
+.formLabel {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.formInput {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    max-width: 500px;
+}
+
+.formButton {
+    width: 50%;
+    height: 50px;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #c9dfff;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+
+    text-decoration: none;
+    color: #257cff;
+    font-size: 20px;
+}

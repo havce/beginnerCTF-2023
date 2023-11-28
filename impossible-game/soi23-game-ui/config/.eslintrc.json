@@ -1,0 +1,50 @@
+{
+    "ignorePatterns": [
+        "src/environments/*"
+    ],
+    "settings": {
+        "import/ignore": [
+            "\\.(css|svg|json)$"
+        ]
+    },
+    "rules": {
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "semi": [
+            "error",
+            "never"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "eol-last": [
+            "error",
+            "always"
+        ],
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 1,
+                "maxEOF": 0
+            }
+        ],
+        "no-trailing-spaces": [
+            "error"
+        ],
+        "no-inline-comments": [
+            "error"
+        ],
+        "no-else-return": [
+            "error",
+            {
+                "allowElseIf": false
+            }
+        ]
+    }
+}

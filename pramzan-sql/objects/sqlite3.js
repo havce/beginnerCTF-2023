@@ -1,5 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database(':memory:');
+const crypto = require("node:crypto");
 
 db.serialize(() => {
     db.run("CREATE TABLE users (" +
@@ -11,7 +12,7 @@ db.serialize(() => {
         "PRIMARY KEY (id))");
 
     const stmt = db.prepare("INSERT INTO users VALUES (?, ?, ?, ?, ?)");
-    stmt.run(1, "admin", "gabibbo", "havceCTF{E_Ad3sa_Un_Bel", "_T0nd_di_Anu3ln}");
+    stmt.run(1, "admin", crypto.randomBytes(20).toString('hex'), process.env.FLAG.substring(0, 14), process.env.FLAG.substring(14));
     stmt.run(2, "user", "supersecurepassword", "Mario", "Rossi");
 
     stmt.finalize();

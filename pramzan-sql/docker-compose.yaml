@@ -6,4 +6,4 @@ services:
       - "80:80"
     restart: always
     environment:
-      - FLAG
+      - FLAG=${FLAG_PRAMZAN_SQL}

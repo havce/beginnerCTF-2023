@@ -103,7 +103,7 @@ const Dictionary = () => {
                         })}
                         </tbody>
                     </table>
-                    <p>A thank you to our admin but, being very shy, he won't reveal his <b>name and surname</b></p>
+                    <p>A thank you to our admin but, being very shy, they won't reveal their <b>name and surname</b></p>
                 </div>
             </div>
         </div>

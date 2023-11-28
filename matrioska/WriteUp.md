@@ -1,7 +1,7 @@
 # Matrioska
 
 ## Descrizione
-Ua uaglio bella sta matrioska.
+Non sempre tutto é come sembra...
 
 ## Soluzione
 Per risolvere la challenge é necessario l'utilizzo dei tool [binwalk](https://www.kali.org/tools/binwalk/) e *file*.

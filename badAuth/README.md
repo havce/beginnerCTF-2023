@@ -14,5 +14,7 @@ Eseguiamo...
 ![eseguibile](https://i.postimg.cc/2S8PWfSr/eseguibile.png)
 Possiamo notare che viene stampato un json... Quindi fa una richiesta ad un sito web?
 Non abbiamo il file .pcap, ma possiamo crearlo!
-
 ![wireshark interface](https://i.postimg.cc/qB6BtyZj/wireshark.png)
+Analizziamo tutti i pacchetti che arrivano sulla scheda di rete! (Cliccando su any)
+A questo punto possiamo eseguire di nuovo l'eseguibile... e aspettare.
+

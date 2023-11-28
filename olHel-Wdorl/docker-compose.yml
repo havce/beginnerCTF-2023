@@ -1,0 +1,9 @@
+version: "3"
+services:
+    olhel-wdorl:
+      build: .
+      environment:
+        - JAIL_ENV_FLAG=${FLAG_HELLO_WORLD}
+      privileged: true
+      ports:
+      - "1337:5000"

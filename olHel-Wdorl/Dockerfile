@@ -1,9 +1,17 @@
-# use the jail base image
+FROM ubuntu:18.04 as builder
+
+RUN apt-get update && apt-get upgrade -y && \
+  apt-get install -y build-essential
+  
+RUN mkdir -p /workdir
+
+WORKDIR /workdir
+
+COPY ./chall.c /workdir/chall.c
+
+RUN gcc -o chal ./chall.c
+
 FROM pwn.red/jail
-# copy the root files from any Docker image
-COPY --from=ubuntu / /srv
-# set the flag env
-ENV flag=havceCTF{oWdrlelloH-HelloWorld}
-# copy the program
-RUN mkdir /srv/app
-COPY ./challenge.c /srv/app/run.c
+
+COPY --from=ubuntu:18.04 / /srv
+COPY --from=builder /workdir/chal /srv/app/run

@@ -26,7 +26,7 @@
                 <div class="form">
                 
                 	<div class="inputBox">
-                    	<input type="text" name="username" value="Intruso Supremo"> <i>Username</i>
+                    	<input type="text" name="username" value="Supreme Intruder"> <i>Username</i>
                     </div>
 
                     <form method="post" action="">
@@ -35,7 +35,7 @@
                         </div>
 
                         <?php
-                        $FLAG = "havceCTF{m4l3det7o_3va1}";
+                        $FLAG = getenv('FLAG');
                         if (isset($_POST['password']) && is_string($_POST['password'])) {
                             $inp = $_POST['password'];
                             if ($inp == "") {
@@ -51,12 +51,12 @@
                                 die();
                             }
                             if (preg_match("/[1]/", $inp, $matches)) {
-                                echo "<h3>Mmmh sei gia arrivato a questo punto, rendiamo la sfida più interessante</h3>";
+                                echo "<h3>Mmmh hai già raggiunto questo punto, rendiamo la sfida più interessante</h3>";
                                 die();
                             }
                             eval("\$input=$inp;");
                             if (strcmp("$input", "192014812") == 0) {
-                                echo "<h3>Congratulazioni sei riuscito ad ottenere la flag: $FLAG</h3>";
+                                echo "<h3>Congratulazioni hai ottenuto la flag: $FLAG</h3>";
                                 die();
                             }
                             if ($inp != "192014812") {

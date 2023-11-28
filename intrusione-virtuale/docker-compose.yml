@@ -1,0 +1,8 @@
+version: "3"
+services:
+  intrusione-virtuale:
+    build: .
+    ports:
+      - 8080:80
+    environment:
+      - FLAG="${FLAG_INTRUSIONE}"

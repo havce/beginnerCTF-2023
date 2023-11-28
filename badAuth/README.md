@@ -27,4 +27,4 @@ Passando autCode=true ci farà entrare?
 Si! Ci fa entrare! Corriamo a fare questo first blood.
 
 ## Flag
-
+havceCTF{sn1fFiNg_4_b1n4rY_1s_tH3_La5t_r3s0rT!}

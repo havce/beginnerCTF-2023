@@ -10,6 +10,9 @@ HINT: Analizzare i pacchetti in entrata successivi all'esecuzione del binario po
 ## Soluzione
 La categoria della challenge era Network.
 Nelle challenges di categoria Network, solitamente ci viene fornito un file .pcap, questa volta invece ci è stato fornito un eseguibile... Un eseguibile ?
-Non avendo il file .pcap, la soluzione era crearselo!
+Eseguiamo...
+![eseguibile](https://i.postimg.cc/2S8PWfSr/eseguibile.png)
+Possiamo notare che viene stampato un json... Quindi fa una richiesta ad un sito web?
+Non abbiamo il file .pcap, ma possiamo crearlo!
 
 ![wireshark interface](https://i.postimg.cc/qB6BtyZj/wireshark.png)

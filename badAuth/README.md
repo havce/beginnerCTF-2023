@@ -22,4 +22,9 @@ A questo punto possiamo eseguire di nuovo l'eseguibile... e aspettare.
 
 Ok la abbiamo! Richiesta POST con paramentro authCode=false.
 Passando autCode=true ci farà entrare?
+![solved](https://i.postimg.cc/76DcxvcF/solved.png)
+
+Si! Ci fa entrare! Corriamo a fare questo first blood.
+
+## Flag
 

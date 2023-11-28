@@ -8,3 +8,6 @@ HINT: Analizzare i pacchetti in entrata successivi all'esecuzione del binario po
 *Author: [@benjamin](https://github.com/b3nj4m1no)*
 
 ## Soluzione
+La categoria della challenge era Network.
+Nelle challenges di categoria Network, solitamente ci viene fornito un file .pcap, questa volta invece ci è stato fornito un eseguibile... Un eseguibile ?
+Non avendo il file .pcap, la soluzione era crearselo!

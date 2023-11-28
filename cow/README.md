@@ -7,4 +7,4 @@
 ## Soluzione
 
 ## Flag
-havceCTF{oWdrlelloH-HelloWorld}
+havceCTF{th4nks_n0w_1_c4n_h4v3_Br34kfAst}

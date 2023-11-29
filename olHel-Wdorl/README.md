@@ -50,7 +50,7 @@ v2 >> 3 = 101111110011010000101100001101110
 ```
 2. `((v2) & 7)`: Effettua un'operazione AND con 7 per ottenere gli ultimi 3 bit di v2.
 ```
-v2 % 7 = 110 (6)
+v2 & 7 = 110 (6)
 ```
 3. `<< 3`: Esegue uno shift a sinistra di 3 bit, algebricamente è un'operazione pari alla moltiplicazione per 8.
 ```

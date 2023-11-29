@@ -1,6 +1,7 @@
 # Cow
 
 ## Descrizione
+Finally my new website is ready for production! Old versions contained too many secrets.
 
 *Authors: [@Ferr0x](https://github.com/Ferr0x), [@samuelevalperta](https://github.com/samuelevalperta)*
 

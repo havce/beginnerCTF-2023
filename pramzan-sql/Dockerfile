@@ -22,4 +22,5 @@ WORKDIR /usr/src/app
 
 EXPOSE 80
 
+USER nobody
 CMD [ "node", "App.js" ]

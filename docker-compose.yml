@@ -117,6 +117,15 @@ services:
     environment:
       - FLAG=${FLAG_PRAMZAN_SQL}
 
+  arrrrrrrrray:
+    build: ./arrrrrrrrray
+    restart: unless-stopped
+    environment:
+      - JAIL_ENV_FLAG=${FLAG_ARRRRRRRRRAY}
+    privileged: true
+    ports:
+      - "1346:5000"
+    networks: [ ]
 
 networks:
   default:

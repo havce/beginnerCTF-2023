@@ -92,6 +92,7 @@ services:
 
   unsignedcasino:
     build: ./unsignedCasino
+    restart: unless-stopped
     environment:
       - JAIL_ENV_FLAG=${FLAG_UNSIGNED_CASINO}
     privileged: true
@@ -101,11 +102,20 @@ services:
 
   criptografy:
     build: ./critpografy
+    restart: unless-stopped
     environment:
       - FLAG=${FLAG_CRIPTOGRAFY}
     ports:
       - "1344:1337"
     networks: [ ]
+
+  pramzan-sql:
+    build: ./pramzan-sql
+    restart: unless-stopped
+    ports:
+      - "1345:80"
+    environment:
+      - FLAG=${FLAG_PRAMZAN_SQL}
 
 
 networks:

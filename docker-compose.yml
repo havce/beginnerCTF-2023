@@ -99,6 +99,15 @@ services:
       - "1343:5000"
     networks: [ ]
 
+  criptografy:
+    build: ./critpografy
+    environment:
+      - FLAG=${FLAG_CRIPTOGRAFY}
+    ports:
+      - "1344:1337"
+    networks: [ ]
+
+
 networks:
   default:
   impossible-game:

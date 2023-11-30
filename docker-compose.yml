@@ -1,0 +1,100 @@
+services:
+  camelcase:
+    build: ./CamelCase1
+    restart: unless-stopped
+    environment:
+      - JAIL_ENV_FLAG=${FLAG_CAMEL_CASE}
+    privileged: true
+    ports:
+      - "1337:5000"
+    networks: [ ]
+
+  guess-the-flag:
+    build: ./guess-the-flag
+    privileged: true
+    restart: unless-stopped
+    environment:
+      - JAIL_ENV_FLAG=${FLAG_GUESS_THE_FLAG}
+      - JAIL_TIME=600
+    ports:
+      - "1338:5000"
+    networks: [ ]
+
+  olhel-wdorl:
+    build: ./olHel-Wdorl
+    restart: unless-stopped
+    environment:
+      - JAIL_ENV_FLAG=${FLAG_HELLO_WORLD}
+    privileged: true
+    ports:
+      - "1339:5000"
+    networks: [ ]
+
+  nfcookies:
+    build: ./nfcookies
+    ports:
+      - "1340:5000"
+    restart: unless-stopped
+    volumes:
+      - nfcookies-data:/app/instance
+    environment:
+      - FLAG=${FLAG_NFCOOKIES}
+    networks: [ ]
+
+  intrusione-virtuale:
+    build: ./intrusione-virtuale
+    restart: unless-stopped
+    ports:
+      - "1341:80"
+    environment:
+      - FLAG="${FLAG_INTRUSIONE}"
+    networks: [ ]
+
+  impossible-game-redis:
+    image: redis:7.2
+    restart: unless-stopped
+    volumes:
+      - impossible-game-redis-data:/data
+    deploy:
+      replicas: 1
+    networks:
+      - impossible-game
+
+  impossible-game-stomp-relay:
+    build:
+      dockerfile_inline: |
+        FROM rabbitmq:3.12
+        RUN rabbitmq-plugins enable --offline rabbitmq_stomp
+    restart: unless-stopped
+    networks:
+      - impossible-game
+
+  impossible-game-web-server:
+    build: ./impossible-game/soi23-game-web-server
+    restart: unless-stopped
+    environment:
+      - SPRING_DATA_REDIS_HOST=impossible-game-redis
+      - flag=${FLAG_IMPOSSIBLE_GAME}
+    command: java -jar app.jar
+    deploy:
+      replicas: 2
+    networks:
+      - impossible-game
+
+  impossible-game-ui:
+    build: ./impossible-game/soi23-game-ui
+    restart: unless-stopped
+    ports:
+      - "1342:80"
+    networks:
+      - impossible-game
+      - default
+
+networks:
+  default:
+  impossible-game:
+    internal: true
+
+volumes:
+  nfcookies-data:
+  impossible-game-redis-data:

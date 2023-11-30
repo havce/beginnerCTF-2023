@@ -7,3 +7,4 @@ FROM eclipse-temurin:17-jre-focal
 COPY app_config_file /opt/app/application.properties
 COPY --from=builder /app/soi23-game-web-server/target/soi23-game-web-server-1.0.0-SNAPSHOT.jar /opt/app/app.jar
 WORKDIR /opt/app
+USER nobody

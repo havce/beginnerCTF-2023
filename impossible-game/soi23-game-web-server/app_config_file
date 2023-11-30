@@ -1,2 +1,2 @@
 # app config file
-it.unipr.soi23.game-web-server.stomp-broker-relay-host=stomp-relay
+it.unipr.soi23.game-web-server.stomp-broker-relay-host=impossible-game-stomp-relay

@@ -90,6 +90,15 @@ services:
       - impossible-game
       - default
 
+  unsignedcasino:
+    build: ./unsignedCasino
+    environment:
+      - JAIL_ENV_FLAG=${FLAG_UNSIGNED_CASINO}
+    privileged: true
+    ports:
+      - "1343:5000"
+    networks: [ ]
+
 networks:
   default:
   impossible-game:

@@ -35,8 +35,6 @@ services:
     ports:
       - "1340:5000"
     restart: unless-stopped
-    volumes:
-      - nfcookies-data:/app/instance
     environment:
       - FLAG=${FLAG_NFCOOKIES}
     networks: [ ]
@@ -133,5 +131,4 @@ networks:
     internal: true
 
 volumes:
-  nfcookies-data:
   impossible-game-redis-data:

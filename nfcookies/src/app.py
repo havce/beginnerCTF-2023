@@ -9,7 +9,7 @@ import base64
 
 db = SQLAlchemy()
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///sqlite.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///:memory:"
 db.init_app(app)
 FLAG = os.getenv("FLAG") 
 app.secret_key = os.getenv("SECRET_KEY", secrets.token_bytes(32))

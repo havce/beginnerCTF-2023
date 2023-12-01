@@ -8,4 +8,4 @@ exploit su github
 
 
 # Flag
-flag{se_risolvi_questa_vieni_a_cyberchallenge}
+havceCTF{se_risolvi_questa_vieni_a_cyberchallenge}

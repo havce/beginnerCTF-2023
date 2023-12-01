@@ -135,12 +135,12 @@ services:
       - "1347:5000"
     networks: [ ]
 
-  code:
-    build: ./code
+  hawslambda:
+    build: ./hAWS-Lambda
     privileged: true
     restart: unless-stopped
     environment:
-      - JAIL_ENV_FLAG=${FLAG_CODE}
+      - FLAG=${FLAG_HAWS_LAMBDA}
     ports:
       - "1348:5000"
     networks: [ ]

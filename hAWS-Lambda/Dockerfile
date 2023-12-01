@@ -13,4 +13,7 @@ RUN --mount=type=bind,target=. \
 FROM pwn.red/jail
 
 COPY --from=builder / /srv
+
+COPY ./hook.sh /jail/hook.sh
+
 COPY --from=builder /chal /srv/app/run

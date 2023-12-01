@@ -135,6 +135,16 @@ services:
       - "1347:5000"
     networks: [ ]
 
+  code:
+    build: ./code
+    privileged: true
+    restart: unless-stopped
+    environment:
+      - JAIL_ENV_FLAG=${FLAG_CODE}
+    ports:
+      - "1348:5000"
+    networks: [ ]
+
 networks:
   default:
   impossible-game:

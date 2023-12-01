@@ -15,3 +15,7 @@ che decodificata in ASCII da la flag.
 ## Flag
 
 `havceCTF{d0n'7_f34r_l0g1c_g4t35}`
+
+## Note
+
+LA CHALL NON E' RISOLVIBILE, SKILL ISSUES DI [@Re_Sole](https://github.com/Re-Sole)*

@@ -135,6 +135,16 @@ services:
       - "1347:5000"
     networks: [ ]
 
+  hawslambda:
+    build: ./hAWS-Lambda
+    privileged: true
+    restart: unless-stopped
+    environment:
+      - FLAG=${FLAG_HAWS_LAMBDA}
+    ports:
+      - "1348:5000"
+    networks: [ ]
+
 networks:
   default:
   impossible-game:

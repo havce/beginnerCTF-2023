@@ -1,11 +1,10 @@
 # ret2win 
 
 ## Descrizione
-che noia un altra challenge che stampa nome e cognome :| 
+Che noia, un'altra challenge che stampa nome e cognome :| 
 
 ## Soluzione
-exploit su github
-
+`exp.py`
 
 # Flag
-havceCTF{se_risolvi_questa_vieni_a_cyberchallenge}
+`havceCTF{se_risolvi_questa_vieni_a_cyberchallenge}`

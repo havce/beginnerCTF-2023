@@ -11,6 +11,7 @@ Per ottenere il titolo di 'Intruso Supremo' visita la pagina: [http://www.beginn
 
 ## Soluzione
 Come affermato nella descrizione, l'obiettivo era trovare la key utilizzata nello XOR.
+
 Sfruttando la proprietà principale dello XOR ( A ^ B = C --> C ^ B = A ) avendo il `ciphertext` e la `key`, potevamo risalire al `plaintext` ( la flag ).
 
 Per trovare la key, potevamo sfruttare il flag format ( `codevinci{` ).

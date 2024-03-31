@@ -1,0 +1,8 @@
+ version: "3"
+services:
+  badAuth:
+    build: .
+    ports:
+      - 3434:80
+    environment:
+      - FLAG="${FLAG_BADAUTH}"
